@@ -22,7 +22,7 @@ cur.execute("CREATE TABLE IF NOT EXISTS quizzes(id INTEGER PRIMARY KEY AUTOINCRE
 
 cur.execute("CREATE TABLE IF NOT EXISTS student_quiz_results(id INTEGER PRIMARY KEY AUTOINCREMENT NULL, student_first_name TEXT NULL,student_last_name TEXT NULL, score INTEGER NULL, FOREIGN KEY(student_first_name, student_last_name) REFERENCES students(first_name, last_name))")
 
-cur.execute("CREATE TABLE IF NOT EXISTS user id INTEGER PRIMARY KEY AUTOINCREMENT NULL, username TEXT NULL, password TEXT NULL")
+cur.execute("CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT NULL, username TEXT NULL, password TEXT NULL)")
 
 con.commit()
 
