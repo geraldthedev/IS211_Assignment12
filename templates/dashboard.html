@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <th>Student ID</th>
+        <th>Student First Name</th>
+        <th>Student Last Name</th>
+        <th>Results</th>
+        </tr>
+        {% for grades in student_grades %}
+            {% for ppl in grades%}
+        <tr>
+            <td>{{ ppl[0] }}</td>
+              <td>{{ ppl[1] }}</td>
+              <td>{{ ppl[2] }}</td>
+              <td> <a href="/student/<id>">Results</a> </td>
+              </tr>}
+       {% endfor %}
+        {% endfor %}
+        
+    </table>
+    <table>
+        <tr>
+        <th>Quiz ID</th>
+        <th>Subject</th>
+        <th>Number of Questions</th>
+        <th>Quiz Date</th>
+        </tr>
+        {% for quizzes in student_quizzes %}
+            {%for quiz in quizzes%}
+        <tr>
+            <td>{{ quiz[0] }}</td>
+        <td>{{ quiz[1] }}</td>
+        <td>{{ quiz[2] }}</td>
+        <td >{{ quiz[3] }}</td>
+        </tr>
+        
+            {% endfor %}
+        {% endfor %}
+    </table>
+      
+ <form action="/student/add" method="get">
+     <button type="submit">Add Student</button>
+ </form>
+ <form action="/quiz/add" method="get">
+     <button type="submit">Add Quiz</button>
+ </form>
+</body>
+</html>
+
+
+
